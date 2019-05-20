@@ -1,11 +1,6 @@
 @import "_variables.scss";
 @import "_mixin.scss";
 
-.m_auto{
-    display: block;
-    margin: 0 auto;
-}
-
 html, body{
     font-size: $font-size-base;
 }
@@ -176,6 +171,12 @@ body{
 }
 
 /* Categories */
+.categories .img-thumbnail{
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0px;
+}
+
 .title{
     @include title(1.4rem);
 
@@ -203,17 +204,25 @@ body{
 
 
 /* Product */
-.products__item::after{
+.products__item .img-thumbnail{
+    width: 90%;
+
+    margin: 0 auto;
+}
+
+.products__item .img-thumbnail::after{
     content: "";
 
     display: block;
 
-    width: 85%;
+    width: 100%;
     height: 4px;
 
     margin: 1.5rem auto 0;
 
     background-color: $bg-nav;
+
+    border-radius: inherit;
 }
 
 .btn_products{
@@ -251,4 +260,12 @@ body{
     font-weight: 700;
     font-family: $font-family-Oswald;
     text-transform: uppercase;
+}
+
+.copyright{
+    color: $color-nav-link;
+    font-weight: 400;
+    font-family: $font-family-OpenSans;
+
+    background-color: $bg-copyright;
 }
