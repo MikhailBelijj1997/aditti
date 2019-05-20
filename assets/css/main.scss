@@ -1,0 +1,254 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+
+.m_auto{
+    display: block;
+    margin: 0 auto;
+}
+
+html, body{
+    font-size: $font-size-base;
+}
+
+body{
+    margin:0px;
+
+    font-family: $font-family-OpenSans;
+    line-height: 1.6;
+    color:$body-color;
+
+    background-color: $body-bg;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    max-width: 1000px;
+}
+
+/* header */
+.logotyp{
+    font-family: $font-family-Lobster;
+    font-size: 3rem;
+    color: $color-logotype;
+}
+
+.fa-shopping-basket{
+    color: $color-logotype;
+}
+
+.shoppingBasket_fas-font{
+    font-size: 2.4rem;
+}
+
+.price{
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: $color-price;
+    font-family: $font-family-Oswald;
+
+    &::after{
+        content: $currency;
+    }
+}
+
+/* Nav */
+.nav{
+    background-color: $bg-nav;
+}
+
+.nav-item{
+    padding: .4rem 0px;
+
+    &:last-child
+    .nav-link{
+        border-right: 1px solid transparent;
+    }
+}
+
+.nav a:not([href]):not([tabindex]){
+    color: $color-nav-link;
+
+    cursor: pointer;
+
+    &:hover{
+        color: $color-nav-link-hover;
+    }
+}
+
+.nav-link{
+    text-transform: uppercase;
+    font-family: $font-family-Oswald;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+
+    position: relative;
+
+    &::after{
+        content: "";
+        display: block;
+
+        width: 2px;
+        height: 1.2rem;
+
+        position: absolute;
+        z-index: 1000;
+        right: 0;
+        top: 45%;
+
+        background-color: $color-nav-link;
+
+        transform: translateY(-45%);
+        -webkit-transform: translateY(-45%);
+        -moz-transform: translateY(-45%);
+        -ms-transform: translateY(-45%);
+        -o-transform: translateY(-45%);
+    }
+
+    &:hover{
+        color: $color-nav-link-hover;
+        text-decoration: none;
+    }
+}
+
+.nav-item:last-child .nav-link{
+    &:after{
+        display: none;
+    }
+}
+
+/* Slider */
+.slider .carousel-inner{
+    min-height: 450px;
+    height: 450px;
+}
+
+.carousel-caption{
+    top: 48px;
+    bottom: auto;
+}
+
+.carousel_announcement{
+    display: flex;
+}
+
+.carousel_images{
+    display: block;
+
+    width: 100%;
+    min-height: 450px;
+}
+
+.carousel-indicators li{
+    border-radius: 100%;
+
+    height: 10px;
+    width: 10px;
+}
+
+.information__title{
+    @include title(3.6rem);
+}
+
+.information__text{
+    font-size: 1.4rem;
+    font-family: $font-family-Oswald;
+
+    max-width: 370px;
+}
+
+.btn-link{
+    @include btn-link;
+    
+    &:hover{
+        text-decoration: none;
+        color: $color-nav-link-hover;
+    }
+}
+
+.btn_information{
+    @include button(.3rem 2rem);
+
+    border: 3px solid $color-nav-link;
+}
+
+/* Categories */
+.title{
+    @include title(1.4rem);
+
+    color: $color-categories-title;
+}
+
+.btn_categories{
+    @include button(.3rem .9rem);
+
+    border-radius: 4px;
+    background-color: $color-categories-button;
+}
+
+.categories__information .btn-link{
+    font-size: 1rem;
+}
+
+/* Section */
+.section__title{
+    @include title(1.5rem);
+    color: $color-nav-link;
+
+    background-color: $bg-nav;
+}
+
+
+/* Product */
+.products__item::after{
+    content: "";
+
+    display: block;
+
+    width: 85%;
+    height: 4px;
+
+    margin: 1.5rem auto 0;
+
+    background-color: $bg-nav;
+}
+
+.btn_products{
+    @include button(auto auto);
+
+    border-radius: 4px;
+    background-color: $color-categories-button;
+}
+
+.btn_products__btn-link_font-size{
+    font-size: 1rem;
+}
+
+.products__price_font-size{
+    font-size: 1.5rem;
+}
+
+/* Footer */
+.footer{
+    background-color: $bg-nav;
+}
+
+.footer .nav-link{
+    font-weight: 300;
+    text-transform: none;
+
+    &:after{
+        display: none;
+    }
+}
+
+.nav-title{
+    font-size: 1.3rem;
+    color: $color-nav-link;
+    font-weight: 700;
+    font-family: $font-family-Oswald;
+    text-transform: uppercase;
+}

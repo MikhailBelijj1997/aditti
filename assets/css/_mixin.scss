@@ -1,0 +1,21 @@
+@mixin btn-link{
+    color: $color-nav-link;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-family: $font-family-Oswald;
+    font-weight: 700;
+}
+
+@mixin button($padding){
+    padding: $padding;
+
+    border-radius: .5rem;
+}
+
+@mixin title($font-size){
+    line-height: 1.1;
+    font-size: $font-size;
+    font-weight: 700;
+    font-family: $font-family-Oswald;
+    text-transform: uppercase;
+}
